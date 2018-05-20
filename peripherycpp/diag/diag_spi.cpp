@@ -1,7 +1,5 @@
 #include <peripherycpp/spi.hpp>
 
-using Spi = rip::peripherycpp::Spi;
-
 int main(int argc, char** argv)
 {
     Spi s;

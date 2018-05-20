@@ -1,7 +1,5 @@
 #include <peripherycpp/mmio.hpp>
 
-using Mmio = rip::peripherycpp::Mmio;
-
 int main(int argc, char** argv)
 {
     Mmio m;

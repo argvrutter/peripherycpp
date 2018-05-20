@@ -1,7 +1,5 @@
 #include <peripherycpp/i2c.hpp>
 
-using I2c = rip::peripherycpp::I2c;
-
 int main(int argc, char** argv)
 {
     I2c i;

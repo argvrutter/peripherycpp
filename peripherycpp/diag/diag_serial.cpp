@@ -1,8 +1,6 @@
 #include <peripherycpp/serial.hpp>
 #include <cstdio>
 
-using Serial = rip::peripherycpp::Serial;
-
 int main(int arc, char **argv)
 {
     Serial s;
