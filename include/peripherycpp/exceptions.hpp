@@ -19,7 +19,27 @@
  */
 #ifndef PERIPHERY_EXCEPTIONS_H
 #define PERIPHERY_EXCEPTIONS_H
-#include <misc/exception_base.hpp>
+#include <string>
+#define NEW_EX(name) \
+class name : public ExceptionBase \
+{ \
+public: \
+    name(std::string message = "") : ExceptionBase(#name ": " + message) {} \
+};
+
+class ExceptionBase : public std::exception
+{
+protected:
+    std::string m_message;
+
+public:
+    ExceptionBase(std::string message = "") : m_message(message) {}
+    const char* what() const throw()
+    {
+        return m_message.c_str();
+    }
+};
+
 /**
  * @class SerialArgError
  * @brief Exception for when invalid serial arguments.
