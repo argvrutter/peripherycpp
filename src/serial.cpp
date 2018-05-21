@@ -19,7 +19,7 @@ Serial::~Serial()
 void Serial::open(std::string device, unsigned int baudrate, unsigned int databits,
                   int parity, unsigned int stopbits, bool xonxoff, bool rtscts)
 {
-    misc::Logger::getInstance()->debug(fmt::format("Serial device {} opening", device));
+    printf("Serial device %s opening\n", device);
 
     serial_parity_t cpar;
     if (parity == 0)
@@ -37,7 +37,7 @@ void Serial::open(std::string device, unsigned int baudrate, unsigned int databi
     checkError(serial_open_advanced(&m_serial, device.c_str(), baudrate,
                   databits, cpar,stopbits, xonxoff, rtscts));
 
-    misc::Logger::getInstance()->debug(fmt::format("Serial device {} successfully open", device));
+    printf("Serial device %s successfully opened", device));
     devices_open[device] = true;
     m_device = device;
     m_baudrate = baudrate;

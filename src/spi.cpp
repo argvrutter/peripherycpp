@@ -19,7 +19,7 @@ Spi::Spi(const std::string path, unsigned int mode, uint32_t max_speed,
 void Spi::open(const std::string path, unsigned int mode, uint32_t max_speed)
 {
     checkError(spi_open(&m_spi, path.c_str(), mode, max_speed));
-    misc::Logger::getInstance()->debug(fmt::format("Device {} successfully open", path));
+    printf("Device %s successfully open\n", path);
 }
 
 void Spi::openAdvanced(const std::string path, unsigned int mode, uint32_t max_speed,
@@ -36,7 +36,7 @@ void Spi::openAdvanced(const std::string path, unsigned int mode, uint32_t max_s
     }
     checkError(spi_open_advanced(&m_spi, path.c_str(), mode, max_speed, bo,
                                  bits_per_word, extra_flags));
-    misc::Logger::getInstance()->debug(fmt::format("Device {} successfully open", path));
+    printf("Device %s successfully opened", path);
 }
 
 void Spi::transfer(const uint8_t *txbuf, uint8_t *rxbuf, size_t len)

@@ -13,7 +13,7 @@ Mmio::Mmio(uintptr_t base, size_t size)
 void Mmio::open(uintptr_t base, size_t size)
 {
     checkError(mmio_open(&m_mmio, base, size));
-    misc::Logger::getInstance()->debug("MMIO successfully opened");
+    printf("MMIO successfully opened\n");
 
 }
 
