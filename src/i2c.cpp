@@ -16,7 +16,7 @@ I2c::I2c(const std::string path)
 void I2c::open(const std::string path)
 {
     checkError(i2c_open(&m_i2c, path.c_str()));
-    misc::Logger::getInstance()->debug(fmt::format("I2C device {} successfully open", path));
+    printf("I2C device %s successfully opened\n", path);
 }
 
 void I2c::transfer(std::vector< std::vector<uint8_t> > msg_data, std::vector<int> flags, size_t count)

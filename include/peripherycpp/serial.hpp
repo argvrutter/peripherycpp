@@ -3,9 +3,6 @@
 #include <string>
 #include <vector>
 #include "peripherycpp/exceptions.hpp"
-#include <misc/logger.hpp>
-#include <fmt/format.h>
-#include <json.hpp>
 #include <memory>
 
 extern "C"
@@ -24,11 +21,6 @@ static bool isOpen(std::string device)
     {
         return 0;
     }
-}
-
-static std::shared_ptr<Serial> makeSerial(const nlohmann::json& config)
-{
-
 }
 
 class Serial

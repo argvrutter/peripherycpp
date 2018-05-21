@@ -8,8 +8,6 @@ extern "C"
 #include "peripherycpp/exceptions.hpp"
 #include <vector>
 #include <string>
-#include <misc/logger.hpp>
-#include <fmt/format.h>
 
 class I2c
 {
