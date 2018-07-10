@@ -13,7 +13,7 @@ Serial::Serial(std::string device, unsigned int baudrate, unsigned int databits,
 Serial::~Serial()
 {
     close();
-    devices_open[m_device] = false;
+    // devices_open[m_device] = false;
 }
 
 void Serial::open(std::string device, unsigned int baudrate, unsigned int databits,
@@ -37,8 +37,8 @@ void Serial::open(std::string device, unsigned int baudrate, unsigned int databi
     checkError(serial_open_advanced(&m_serial, device.c_str(), baudrate,
                   databits, cpar,stopbits, xonxoff, rtscts));
 
-    printf("Serial device %s successfully opened", device));
-    devices_open[device] = true;
+    printf("Serial device %s successfully opened", device);
+    // devices_open[device] = true;
     m_device = device;
     m_baudrate = baudrate;
     m_databits = databits;

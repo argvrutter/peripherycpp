@@ -4,12 +4,13 @@
 #include <vector>
 #include "peripherycpp/exceptions.hpp"
 #include <memory>
+#include <map>
 
 extern "C"
 {
     #include "serial.h"
 }
-
+/*
 std::map<std::string, bool> devices_open;
 static bool isOpen(std::string device)
 {
@@ -22,7 +23,7 @@ static bool isOpen(std::string device)
         return 0;
     }
 }
-
+*/
 class Serial
 {
 public:
